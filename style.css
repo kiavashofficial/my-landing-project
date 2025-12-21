@@ -1,0 +1,463 @@
+body {
+    font-family: fontMan;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    @font-face{
+ font-family: 'FontMan';
+ src: url('myfont/Vazir.ttf') format('truetype'),
+ url('myfont/Vazir.woff') format('woff'),
+ url('myfont/Vazir.woff2') format('woff2');
+}
+}
+
+/* Header */
+.header {
+    background: #283e51;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+    color: white;
+
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    background-image: url("https://images.unsplash.com/photo-1522199710521-72d69614c702?w=1400");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+}
+
+/* 3D Cards */
+.section-3d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.card-3d {
+    width: 260px;
+    height: 180px;
+    margin: 20px;
+    perspective: 1000px;
+    background: #fff;
+    border-radius: 15px;
+    transition: transform 0.2s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-3d .inner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+    color: white;
+    border-radius: 18px;
+    padding: 20px;
+    transition: transform 0.2s ease-out;
+    transform-style: preserve-3d;
+    text-align: center;
+}
+.card-3d.active {
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+.hero h2,
+.hero p {
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: #283e51;
+    color: white;
+    margin-top: 50px;
+}
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+.hero * {
+    position: relative;
+    z-index: 2;
+}
+html{
+    scroll-behavior: smooth;
+}
+.section{
+    scroll-margin-top: 100px;
+}
+.typing{
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 15px;
+    border-right: 3px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+}
+@keyframes typing{
+    form{width: 0;}
+    to {width: 260px;}
+}
+@keyframes blink{
+    50% {
+        border-color: transparent;
+    }
+}
+.parallax{
+    width: 100%;
+    height: 400px;
+    background-image: url(images/parallax.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+.parallax::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+.parallax-content{
+    position: relative;
+    z-index: 2;
+}
+.parallax .content{
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    padding: 20px 40px;
+    border-radius: 15px;
+}
+.parallax h2{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+.parallax p{
+    font-size: 18px;
+}
+.floating{
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+    50%|{
+        transform: translateY(-12px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.reveal{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.9s ease-out;
+}
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    perspective: 1200px;
+}
+.carousel{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 12s infinite linear;
+}
+.carousel-item {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 60px;
+    top: 60px;
+}
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* موقعیت ۵ کارت در فضای سه‌بعدی */
+.carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+.carousel-item:nth-child(2) { transform: rotateY(72deg) translateZ(300px); }
+.carousel-item:nth-child(3) { transform: rotateY(144deg) translateZ(300px); }
+.carousel-item:nth-child(4) { transform: rotateY(216deg) translateZ(300px); }
+.carousel-item:nth-child(5) { transform: rotateY(288deg) translateZ(300px); }
+
+/* انیمیشن چرخش */
+@keyframes rotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+.carousel:hover {
+    animation-play-state: paused;
+}
+
+
+
+/*#scroll-progress{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 8px;
+    width: 0%;
+    background: radial-gradient(circle at 20% 50%, #30f9ff, transparent),
+    radial-gradient(circle at 80% 50%, #ff30e6, transparent),
+    linear-gradient(90deg, #00eaff, #8a00ff);
+    background-size: 200% 200%;
+    animation: liquidFlow 3s ease-in-out infinite;
+    filter: blur(2px);
+    border-radius: 0 0 10px 10px;
+    z-index: 999999;
+    box-shadow: 0 0 15px #00eaff,
+    0 0 25px #ff30e6;
+}
+
+@keyframes liquidFlow {
+    0% {
+        background-position: 0% 50%;
+        filter: blur(2px);
+    }
+    50%{
+        background-position: 100% 50%;
+        filter: blur(4px);
+    }
+    100% {
+        background-position: 0% 50%;
+        filter: blur(2px);
+    }
+}*/
+
+
+/*#scroll-progress {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 6px;
+    width: 0%;
+    background: linear-gradient(90deg,
+        #ff004c,
+        #ff7b00,
+        #ffe600,
+        #21ff00,
+        #00f7ff,
+        #007bff,
+        #b300ff,
+        #ff00bf
+    );
+    background-size: 400%;
+    z-index: 99999;
+    animation: rainbowMove 6s linear infinite;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 0 10px rgba(255, 0, 150, 0.8),
+                0 0 20px rgba(0, 200, 255, 0.8);
+}
+
+@keyframes rainbowMove {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 200%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}*/
+
+/*#scroll-progress{
+position: fixed;
+    top: 0;
+    right: 0;
+    height: 5px;
+    width: 0%;
+    background: #4b79a1;
+    background: linear-gradient(90deg, #4b79a1, #00eaff, #00ffea);
+    z-index: 9999;
+    transition: width 0.15s ease-out;
+    box-shadow: 0 0 10px #00eaff,
+                0 0 20px #00eaff,
+                0 0 40px #00eaff;
+}*/
+
+
+/*@keyframes neonMove {
+    0% {
+        box-shadow: 0 0 8px #00eaff, 0 0 16px #00eaff, 0 0 32px #00eaff;
+    }
+    50% {
+        box-shadow: 0 0 12px #00ffee, 0 0 24px #00ffee, 0 0 48px #00ffee;
+    }
+    100% {
+        box-shadow: 0 0 8px #00eaff, 0 0 16px #00eaff, 0 0 32px #00eaff;
+    }
+}
+#scroll-progress {
+    animation: noneMove 2.5s infinite linear;
+}*/
+
+/* ---------------- CYBERPUNK SCAN BAR ---------------- */
+/*#scroll-cyber {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #00f0ff, #ff00ea);
+    overflow: hidden;
+    z-index: 9999;
+}
+
+#scroll-cyber::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    background: rgba(255, 255, 255, 0.7);
+    filter: blur(8px);
+    animation: cyberScan 1.4s infinite linear;
+}
+
+@keyframes cyberScan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}*/
+
+/* ---------------- GLASSMORPHISM LIQUID BAR ---------------- */
+/*#scroll-glass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 0%;
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    border-radius: 0 0 15px 15px;
+    z-index: 9999;
+    transition: width 0.2s ease;
+}*/
+
+/* ---------------- HOLOGRAM SCROLL LINE ---------------- */
+#scroll-holo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 6px;
+    width: 0%;
+    background: linear-gradient(90deg,#0ff,#5f5cff,#0ff);
+    box-shadow: 0 0 15px #0ff, 0 0 30px #5f5cff;
+    animation: holoGlow 3s ease-in-out infinite;
+    z-index: 9999;
+    border-radius: 0 0 10px 10px;
+}
+
+@keyframes holoGlow {
+    0% { filter: drop-shadow(0 0 5px #0ff); }
+    50% { filter: drop-shadow(0 0 20px #5f5cff); }
+    100% { filter: drop-shadow(0 0 5px #0ff); }
+}
+
+/* ===== Neumorphism Buttons ===== */
+.neo-section{
+    text-align: center;
+    margin: 80px 0;
+}
+.neo-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.neo-btn{
+    padding: 14px 35px;
+    border-radius: 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    background: #e6e6e6;
+    box-shadow: 7px 7px 15px #c6c6c6,
+-7px -7px 15px #ffffff;
+transition: 0.2s ease;
+}
+/*حالت فشار داادن*/
+.neo-btn:active{
+    box-shadow: inset 5px 5px 10px #c5c5c5, 
+inset -5px -5px 10px #ffffff;
+transform: scale(0.97);
+}
